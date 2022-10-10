@@ -1,0 +1,39 @@
+Agenda:
+	external and internal commands
+		internal commands - commands which are builtin in the linux os 
+			cd help type history
+			help
+		external commands - which are install or added by the distruibuion provider or user
+			cat ls apt apt-get ifconfig
+	cat
+		cat filename - display the content of a file
+	more
+		display the content in pages
+		more -10
+		more -p
+	> - redirection - n number of execution gives same result
+		command > file_name
+	>> - append - n number of execution gives different result
+		command >> file_name
+	history
+		to check what all commans have been executed in the console
+	cp copy - paste
+		cp src dest
+		cp src1 src2 src3 dest
+	mv - cut - paste / rename
+		mv src dest
+		mv src1 src2 src3 dest
+		mv file1 fle2
+	date
+		displat date of machine
+	lsb_relaese
+		 operating system details
+	uname
+		os details
+	who am if
+		current logged in user
+	who 
+		current user and last power on time
+
+task
+	10 flags from each command to do additional operations

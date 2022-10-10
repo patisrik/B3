@@ -1,0 +1,209 @@
+
+VI editor:
+
+apt-get install <package-name>
+
+apt-get install vim
+
+
+
+Linux having 2 types of editor :
+
+1.VI
+2.VIM 
+
+
+Vi editor:
+ 
+*The vi editor is used to create , modify the file along with the " Search , Replace and delete the lines in the opened file"
+
+1000 lines :
+
+I want "linux" in the open file 
+I want to go for nth line and I want to delete the nth line
+I want "linux" and replace "ubuntu" in the open file.
+
+1. How to create the file in Vi editor ?
+
+Syntax: 
+
+vi <File_Name>
+
+Note: If the filename is already exist then It is going to open the file or else it is going to create the new file.
+
+vi test.txt
+
+Difference b/w touch and vi:
+
+* I want to open the file in READ ONLY format ?
+
+vi -R <file_name>
+
+ex:
+
+vi -R test.txt
+
+
+Operation mode:
+
+1.Command mode
+2.Insert mode
+
+
+1.Command mode: ( By default , when we open the file with VI , It will be in the command mode)
+We can do ( Save , delete , search and replace )
+
+2.Insert mode: I will allow the editor to the add the content into the file.
+
+1.How to switch from command mode to insert mode ?
+
+ESC + i
+
+i-> Insert 
+
+( Switch from Command mode to insert mode )
+
+Save the file ?
+
+esc:w 
+
+w-> write into disk 
+
+Exit/Quit/Comeout from vi editor ?
+
+q-> quit from the editor
+
+esc:q
+
+How to save and exit ?
+
+esc:wq
+
+How to quit from the vi editor forcefully ( without saving any new changes )
+
+esc:q!
+
+
+Insertion:
+
+esc:i 
+
+
+Insert at end of the line:
+
+esc [SHIFT+a]
+esc A 
+
+
+Delete the characters in vi editor :
+//First we need to pint the cursor to the char the we need to use 
+
+esc x
+
+How to delete the word ?
+
+esc dw
+
+-> delete word 
+
+How to delete the lines in the vi ?
+
+
+esc dd 
+
+-> dd > delete entire line 
+
+I want to delete the 5 lines from the current line?
+
+esc [Number]dd
+esc 5dd                                              
+                                              
+--------------------------------------------------
+
+Copy paste in the Linux/ubuntu/vi console:
+
+ctrl+c -> [ctrl+shift+c] -> copy 
+ctrl+v -> [ctrl+shift+v] -> paste
+
+
+Not Imp:
+
+Particular line:
+
+esc yy 
+-> yy -> It will copy the entire line
+-> multiple lines:
+
+esc [Number_of_lines]yy
+esc 10yy
+
+Paste:
+
+esc p 
+[ctrl+shift+v]
+
+
+----------------------------------------------------------
+
+set command:
+
+How to set the line number in the editor?
+
+esc:set nu
+
+set nu : Set the line number
+
+How to unset the line number ?
+
+esc:set nonu
+
+set nonu -> no line number
+
+
+-----------------------------------------------------------
+
+How to go for beginiing of the file ?
+
+esc 1G
+
+esc 1[SHIFT+g]
+
+
+How to move or go to end of the file ?
+
+esc G
+
+esc [shift+g]
+
+
+specific line:
+
+
+esc [LineNumber]G
+esc [LineNumber][Shift+g]
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+

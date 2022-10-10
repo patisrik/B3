@@ -1,0 +1,236 @@
+Task:
+
+List all the types and execute and upload with screenshot
+
+
+
+*Find: Find is used to search for files or dir in the specific dir or in the entire file system.
+
+Find will search based on the below critrias:
+
+1.Creation date
+2.File type ( .txt , .log .sh .jpeg )
+3.Last modified 
+4.Access time
+5.Size
+6.Empty/Non empty
+7.Date
+8.Owner (  root , user )
+9.Permission
+
+Syntax:
+
+find <dir_name> -name <file_name>
+
+dir : Specific dir name , where you want to search for the file.
+file_name: fileName that we want to search
+
+ex:
+
+find /home/praveen/ -name test.txt
+
+Here:
+test.txt -> file
+/home/praveen/ -> dir 
+
+
+ex:
+
+find /home/praveen/ -name whileLoop.sh
+/home/praveen/test_sh/whileLoop.sh
+/home/praveen/whileLoop.sh
+
+
+find . -name test.txt
+
+. -> current dir
+
+2. Search for file with the pattern?
+ex:  .sh .log .exec .zip .tar.gz
+
+Syntax:
+
+find <dir_name> -name *.log
+
+find <dir_name> -name '*.log'
+
+ex:
+
+find /home/praveen/ -name *.sh
+find /home/praveen/greptest/ -name '*.log'
+
+
+* Exec :
+
+I want to search for file and I want to delete the file , which are found in the result  ?
+
+
+find <dir_name> -name '*.log' -exec rm -i {}
+find <dir_name> -name '*.log' -exec rm -i {} \;
+
+ex:
+
+find /home/praveen/ -name '*.log' -exec rm -i {} \;
+
+
+Note:
+
+Done try this in the /home/<user>/ 
+
+One dir -> test -> .txt .log  
+
+
+find /home/praveen/greptest/ -name '*.log' -exec  rm -i {} \;
+rm: remove regular empty file '/home/praveen/greptest/t2.log'? y
+praveen@praveen-Lenovo-G50-80:~$ ls -lrt greptest/
+total 0
+praveen@praveen-Lenovo-G50-80:~$ 
+
+
+* How to search for empty files?
+
+find <dir_name> -empty
+
+ex:
+
+find /home/praveen/greptest/ -empty
+/home/praveen/greptest/test2.log
+
+
+*Search for the file based on the file permission ?
+
+find <dir_name> -perm <file_permission>
+
+ex:
+
+find /home/praveen/ -perm 777
+
+find /home/praveen/ -perm 655
+
+
+praveen@praveen-Lenovo-G50-80:~$ find /home/praveen/greptest/ -perm 777
+/home/praveen/greptest/test.log
+/home/praveen/greptest/test2.log
+praveen@praveen-Lenovo-G50-80:~$ find /home/praveen/greptest/ -perm 771
+praveen@praveen-Lenovo-G50-80:~$ 
+praveen@praveen-Lenovo-G50-80:~$ find /home/praveen/greptest/ -perm 664
+/home/praveen/greptest/t3.txt
+/home/praveen/greptest/t2.txt
+
+
+Based on the user:
+Syntax:
+
+find <dir_name> -user <user_name> <dir_name>
+
+ex:
+
+find /home/praveen/ -user praveen
+
+$ find /home/praveen/greptest/ -user praveen 
+/home/praveen/greptest/
+/home/praveen/greptest/test.log
+/home/praveen/greptest/t3.txt
+/home/praveen/greptest/t2.txt
+/home/praveen/greptest/test2.log
+
+
+find /home/praveen/greptest/ -user root
+/home/praveen/greptest/test.log
+/home/praveen/greptest/test2.log
+
+
+* Find the file which is modified some days back ?
+
+find <dir> -mtime <number_of_days>
+
+ex:
+
+find /home/praveen/ -mtime 20 
+
+-mtime: modified time
+-atime: last access time
+
+find /home/praveen/greptest/ -atime 1
+<No_result>
+
+
+
+find /home/praveen/greptest/ -atime 0
+/home/praveen/greptest/
+/home/praveen/greptest/test.log
+/home/praveen/greptest/t3.txt
+/home/praveen/greptest/t2.txt
+/home/praveen/greptest/test2.log
+
+
+Mins:
+
+find <dir_name> -cmin -<mins>
+
+ex:
+
+find files which are created 20 mins ago
+
+find /home/praveen/ -cmin -20 
+
+c min: created
+a min: access 
+m min: modified time
+
+Based on size:
+
+find <dir_name> -size <size_In_MB>
+
+ex:
+
+find /home/praveen/ -size 100M
+
+wget https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.8/bin/apache-tomcat-10.0.8.tar.gz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

@@ -1,0 +1,178 @@
+Task:
+
+1.How to search for case insesntive pattern/string/input/value in the opend file ?
+2.How to search and replace starting from "nth" ocuurence till end of the file ?
+3.How to get the longest line number in the file ?
+<wc>
+4.What is difference between grep and egrep ?
+
+
+vi:
+
+How to search for a particular pattern/string/input/value/word  in the opend file?
+Syntax:
+
+esc /<pattern>
+
+Ex:
+
+esc /linux
+
+* How to see the next match/occurence of the particular pattern/string/input/value ?
+
+esc /linux
+
+<Enter>
+
+esc n
+
+n -> next 
+
+
+How to search for a particular pattern/string/input/value in the opend file in the reverse direction ?
+
+esc ?<pattern>
+
+ex:
+
+esc ?linux
+
+
+// logfile 
+// 10.2.2.100 -> 100 times -> 10.3.3.101 
+
+How to replace/substistuite the given pattern/string/input/value/word in the open file ?
+
+synatx:
+
+
+esc :%s/<search_pattern>/<replace_pattern>/g
+
+s -> subsituite 
+g-> globally
+
+ex:
+esc :s/linux/ubuntu/g
+
+esc :%s/linux/ubuntu/g
+
+for ex: replace for the nth occurence ?
+
+ex:
+:s/linux/ubuntu/<nth>
+
+:s/linux/ubuntu/10
+
+ex:
+
+:%s/linux/ubuntu/10
+
+
+--------------------------------------------------------------------------------------------
+
+How to count the characters , bytes , words and lines ?
+
+wc : word count , By using this command we are going to get the count of characters , bytes , words and lines of the file/input resource ?
+
+synatx:
+
+wc <file_name>
+
+ex:
+wc test_redirect.txt 
+
+150 1345 9968 test_redirect.txt
+
+150 -> lines
+1345 -> words 
+9968 -> chars 
+
+
+-l : Number of lines
+-c : Number of chars
+-w : Number of words
+
+
+praveen@praveen-Lenovo-G50-80:~$ wc -l test_redirect.txt 
+150 test_redirect.txt
+praveen@praveen-Lenovo-G50-80:~$ wc -w test_redirect.txt 
+1345 test_redirect.txt
+praveen@praveen-Lenovo-G50-80:~$ 
+praveen@praveen-Lenovo-G50-80:~$ wc -c test_redirect.txt 
+9968 test_redirect.txt
+
+
+ls -lrt | wc 
+
+--------------------------------------------------------------------------------------
+Grep:
+
+praveen@praveen-Lenovo-G50-80:~$ grep -o "linux" testB4.txt 
+linux
+linux
+linux
+linux
+linux
+linux
+linux
+
+
+^ -> To search for pattern starting with some pattern 
+
+for ex:
+
+
+grep -i -n "^linux" testName.txt
+grep -i "linux$" testB4.txt 
+
+
+options:
+
+i , n , w , o 
+
+Inside :
+
+^ and $ 
+
+Multiple patterns:
+
+grep -e "P1" -e "p2" fileName.txt
+
+
+xargs 
+ls | xargs grep -i <pattern>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

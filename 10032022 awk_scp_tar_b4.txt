@@ -1,0 +1,210 @@
+1.AWK perform basic operation using different FS ?
+2.AWK perform to get data on multiple selection criteria ?
+/manager/ 
+ for ex:
+/manager,clerk/
+3.What is difference between scp and Rsync
+
+
+
+
+//AWK, Tar and SCP , Netstat
+
+AWK: 
+* AWK command is a scripting language is used for generating the reports or manipulating the data.
+
+ -> spredsheet / xlxx /xls / 
+
+* By using command we can able to fetch the data based on columns.
+
+
+Syntax:
+
+awk options 'selection_criteria {action}' file_name
+
+1.How to display all the columns in the AWK command ?
+
+awk '{print}' awk_data.txt
+
+2.How to display all the columns with any selection criteria ?
+
+awk '/clerk/ {print}' awk_data.txt
+
+
+3.I want to fetch particular columns with any selection criteria ?
+
+awk '/clerk/ {print $1,$4}' awk_data.txt
+
+$1 -> 1st column
+$2 -> 2nd column
+
+*Built in variables in the awk command?
+
+NF : Number of fields in each line. => 4
+ajay manager account 45000
+ 
+NR:Number of records. It will have the current line count. ( set nu )
+
+FS:Field seprator. space 
+
+-F option to sepicfy the FS 
+
+awk -F ',' '/manager/ {print $1,$2}' fileName
+
+name,desg,dept,salary
+ajay,manager,account,45000
+sunil clerk account 25000
+
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000 
+
+
+awk '/manager/ {print $1}'
+
+Attach line number to zero th coloumn:
+
+awk '/manager/ {print NR,$0}' awk_data.txt 
+
+
+*Fetch 1st and last column of the file ?
+
+awk '{print $2,$NF}' awk_data.txt
+
+
+*Fetch data from particular range ?
+
+awk 'NR==2,NR==8 {print NR,$0}' awk_data.txt
+
+awk'staring_number,endLineNumber action' fileName
+
+*How to print any empty line ?
+
+awk '{print}' 
+
+awk 'NF==0 {print NR,$0}' awk_data.txt
+
+*How to print any non empty line ?
+
+awk 'NF!=0 {print NR,$0}' awk_data.txt
+
+awk 'NF>0 {print NR,$0}' awk_data.txt
+
+--------------------------------------------------------------------------------------------------------
+*zip:Compress the files , dir , multiple dir or multiple files in multiple dir into single file.
+
+*tar -> ( Tape archive )
+
+Docs 
+Docs.zip 
+Docs.tar.gz 
+-> tar ( Tape archive )
+-> gz ( gunzip )
+Docs.tar
+
+*The tar(tape archive) is used to create archive and extarct the archive files.
+Note : 
+By using tar we can compress the files,dir and create the new compressed file.
+
+Syntax:
+
+tar [options] [archive_file_name] [Files/Dirs_to_be_archived]
+
+Options:
+
+-c : Creates archive
+-x : Extract the archive
+-f : Create archive with given filename
+-v : Display info 
+-z: Zip, tell/inform the tar command that need to create tar file using gzip 
+
+How to tar/arhive/compress the dir ?
+
+$ tar -zcvf docs.tar.gz testFiles
+testFiles/
+testFiles/awk_data.txt
+testFiles/awk_Test.txt
+
+
+*How to extract the tar file ?
+*How to untar ?
+*How to de-compress the tar file ?
+//[Path_to_extract]
+
+tar -xvf [Tar_file_name]
+
+tar -xvf docs.tar.gz
+
+-----------------------------------------------------------------------------------------
+scp:Server copy / Secure copy
+
+cp <source> <dest>
+
+*How to copy files from local machine to remote server ?
+
+Synatx:
+
+72.12.0.101
+
+scp <local_file_name_with_path> <user_name>@<remote_ip_address>:<remote_file_path>
+
+scp dbConfig.txt praveen@172.18.0.1:/home/praveen/testFiles/
+
+[prompt for password]
+
+
+//PEM file:
+
+scp <pem_file> <local_file_name_with_path> <user_name>@<remote_ip_address>:<remote_file_path>
+It will not ask for password
+
+
+*How to copy files from remote server to local ?
+
+scp  <user_name>@<remote_ip_address>:<remote_file_path> <localPath>
+
+scp praveen@172.18.0.1:/home/praveen/testFiles/dbConfig.txt /home/praveen/TestData/
+
+*
+
+rsync <local_file_name_with_path> <user_name>@<remote_ip_address>:<remote_file_path>
+
+[10GB] from your local to remote
+
+-------------------50%---------60%---------------
+0%----------------------------------------------
+
+---------------------------------------90%-----
+rsync 
+---------------------------------------90%------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

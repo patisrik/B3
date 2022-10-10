@@ -1,0 +1,50 @@
+Agenda:
+	head
+		disply from top
+		head filename
+		head -10 filename
+	tail
+		display from bottom
+		tail filename
+		tail -10 filename
+		tail -f filename 
+	echo
+		this is to display any content on the console
+		echo adi
+		echo $variablename
+		echo $key
+	export 
+		to set any value to the env at session level ,user level(.bashrc) global lvel
+		export key=value
+	env
+		dispal environment variable
+		env
+	|
+		pass the output of  command to next command
+		ls -l |head -5 | tail -2
+	;
+		combine multiple commands in a single line
+		export c=1234;echo $c;echo $a
+	grep
+		search a content in a file
+		grep pattern filename
+		grep pattern foldername
+		command | grep pattern
+		grep -c -r kind .
+		grep kind abc.yaml
+		grep -r kind .
+		ls -lr | grep abc	
+	du
+		disk utilization
+		du
+		du -h
+		du folder
+	df
+		disk free
+		df
+		df -h
+	free
+		memory free
+		free		
+task
+	10 flags from each command to do additional operations

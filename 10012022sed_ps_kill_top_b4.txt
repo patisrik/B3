@@ -1,0 +1,220 @@
+Task :
+* How to replace the pattern from nth to last line                    -> nth to last   -> 50 to 100
+* How to replace the pattern from beginiing to nth line.              -> begin to nth  -> 0 to 50
+n: 50
+begin: 0
+end/last: 100
+
+
+* How to search and replace with case insensitive pattern?
+
+
+
+
+
+*SED: Streaming editor 
+
+* linux/unix in the file
+1.Open the file : vi fileName
+ 
+ esc: s/linux/unix/g
+
+* When my file size huge.
+  * Performance issue
+  
+     
+Sed : Sed command is used to search , replace , delete and insert the content to the file.
+
+*search  we can repplace  it by grep 
+*search and replace we can replace it by vi
+
+open the file
+I need to move cursor to 10th line and 
+esc 10DD
+
+Note: Without opening the file , we can perform the search , replace and delete the content.
+
+Syntax:
+
+sed <options> <file_name>
+
+*Sed will perform the search and replace in line by line format.
+
+ex:
+
+sed 's/<pattern>/<replace_pattern>/' fileName
+
+sed 's/linux/unix/' sedTest.txt
+
+Note:
+
+1.Sed, By default it will change the 1st ocuurence of the match in the file.
+LINUX linux LINUX linux LINUX linux
+
+sed 's/linux/unix/' sedTest.txt
+LINUX unix LINUX linux LINUX linux
+
+2.without using the -i option we will not save the replaced content in the file.
+
+sed -i 's/linux/unix/' sedTest.txt
+
+
+
+* Replace the string/pattern in all the occurences
+
+sed 's/<pattern>/<replace_pattern>/g' fileName
+
+g-> globally 
+
+In the line , where the pattern is matched/found then it will replace.
+
+sed -i 's/linux/unix/g' sedTest.txt
+
+
+*Replace on the particular/nth occurenece?
+
+
+sed -i 's/linux/unix/<n>' sedTest.txt
+
+
+sed -i 's/linux/unix/2' sedTest.txt
+
+
+
+* How to search and replace the multiple patterns ?
+
+sed 's/<Pattern_1>/<replace_pattern1>/<N>;s/<Pattern_2>/<replace_pattern_2/<N>' fileName
+
+ex:
+
+sed 's/unix/praveen/g;s/LINUX/Ubuntu/g' sedTest.txt
+
+
+* Replace the pattern in the specific line ?
+
+
+sed '<line_number> s/<pattern>/<replace_pattern>/<g/n>' fileName
+
+ex:
+
+sed '3 s/LINUX/ubuntu/2' sedTest.txt
+
+
+-------------------------------------------------------------------------------
+* Delete the line in the file
+
+sed '<line_number>d' fileName
+
+ex:
+
+sed '3d' sedTest.txt
+
+*Want to delete the line from m to n
+
+syntax:
+
+sed '<start_line_number>,<end_line_number>d' <file_name>
+
+sed '10,20d' sedTest.txt
+
+
+-----------------------------------------------------------------------------------------------
+ps , kill ,top , ping , telnet ,  hard link , soft link
+
+
+Ps: Process status:
+
+Task manager: windows: 
+
+ctrl+alt+del -> 
+
+ps -aef 
+
+UID          PID    PPID  C STIME TTY          TIME CMD
+root       92685       2  0 08:36 ?        00:00:00 [kworker/u9:1-rb_allocator]
+praveen    92718   92666  0 08:36 pts/1    00:00:00 sh idea.sh
+praveen    92734   92718 89 08:36 pts/1    00:03:35 /home/praveen/Downloads/ideaIC-2021.3.1/idea-IC-213.6461.79/jbr/bin/java -classpath /home/
+root       92777       2  0 08:36 ?        00:00:00 [kworker/u8:2-i915]
+praveen    92791   92734  0 08:37 pts/1    00:00:00 /home/praveen/Downloads/ideaIC-2021.3.1/idea-IC-213.6461.79/bin/fsnotifier
+root       93103       2  0 08:37 ?        00:00:00 [kworker/3:1-events]
+root       93163       2  0 08:39 ?        00:00:00 [kworker/1:2-events]
+praveen    93186   12135  0 08:40 pts/0    00:00:00 ps -aef
+
+
+option:
+
+a : It will give the STIME details  
+e : It will show only the running process
+
+
+PID: Process ID
+
+Process, It will generate the unique processID in the back ground.
+
+
+* How to check wheather the particular process is running or not.
+
+ps -aef | grep "idea" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

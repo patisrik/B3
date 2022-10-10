@@ -1,0 +1,34 @@
+Agenda:
+	ls - list the files present in the dir
+		ls -l - alphabetical order
+		ls -lr - reverse alphabetical order
+		ls -lt - based on time
+		ls -lrt - reverse time
+		ls -lh - display the size in human understandable format
+	man - to check the manual for any command
+	hostname - give the domain/host details like fqdn, ip, dns etc
+		hostname -f
+		hostname -i
+	cd	- change directory
+		cd
+		cd /
+		cd ~
+		cd ..
+		cd ../../
+		cd <relative>
+		cd <full path>
+	pwd - present working dir	
+
+permissions	 version user group size date&time filename
+drwxr-xr-x 3 e182114 boks_users     4096 Aug 29 16:46 amat
+
+d	rwx r-x r-x
+filetype	user	group	all
+
+d dir
+- file
+l link
+
+
+task
+	10 flags from each command to do additional operations

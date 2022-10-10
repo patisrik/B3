@@ -1,0 +1,37 @@
+
+
+Agenda:
+	hardlink and soft link
+		hardlink
+			creates a copy to the file/dir and link it to the orginal ( delete of orginal doest affect)
+				ln source dest
+		softlink
+			creates a pointer to the orginal file ( delete of orginal will empty the reference)
+				ln -s source dest
+	wget
+		this is the command to get from web, or to download from web
+			wget url
+			wget webpage
+	top
+		what all he applications running in the background
+		top
+	kill
+		to stop any running application
+		kill -9 pid
+	ps
+		gives all the infromation related to process running in the system
+		ps 
+		ps -a
+		ps -aef 
+		ps -aef | grep process		
+	ping
+		heartbeat of a machine ( sys up or not)
+		ping ipaddr
+		ping hostname
+	telnet
+		to check any port is open or not ( application running on that port or not)
+		telnet ipaddr portnum
+		telnet hostname port
+
+task
+	10 flags from each command to do additional operations

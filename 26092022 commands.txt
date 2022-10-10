@@ -1,0 +1,61 @@
+Agenda:
+	grep 
+		pattern searching command which can be used to search any matching pattern in file content, or and commands output.
+		cat filename | grep <pattern>
+		grep <pattern> files/file
+	adduser
+		create a user for linux, group, and group mapping
+		adduser username
+		cat /etc/passwd - display all users
+	deluser
+		delete the user from the system
+		deluser username
+	addgroup
+		to create a group
+		addgroup groupname
+		cat /etc/group - display all groups
+	delgroup
+		tp delete a group
+		delgroup groupname
+	usermod
+		managemnet of user information
+		group addition - usermod -a -G groupname username
+		passwd change - usermod -p username	
+	passwd
+		change password for a user
+		passwd username
+		passwd (current logged in user)
+	chmod
+		change the permission of the file
+		chmod 777 filename
+		chmod u+r,g+w,o-x filename
+	chown
+		change the owner for a file (group also)
+		chown usernae filename
+		chown usernae:groupname filename
+	chgrp
+		change the group ownership for a file
+		chgrp groupname filename
+task:
+	10 flags from each command to do additional operations
+	
+Additional info
+rwx rwx rwx
+111 111 111 - 7 7 7
+1*2^2+1*2^1+1*2^0 = 4+2+1=7
+101 010 001
+1*2^2+0*2^1+1*2^0 = 4+0+1 =5
+456	-> 100 101 110 - r-- r-x rw-
+
+000 ---
+001 --x
+010 -w-
+011 -wx
+100 r--
+101 r-x
+110 rw-
+111 rwx
+
+u - user
+g - group
+o - others

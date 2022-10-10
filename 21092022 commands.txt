@@ -1,0 +1,43 @@
+Agenda
+	sudo
+		adminisitator access
+		sudo apt .....
+		sudo su
+		sudo start svcname
+	apt, apt-get
+		application packaging tool
+		get the application based on apt-repo.
+		add the repo to apt, update , install
+		apt update
+		apt install <app name>
+		apt-get update
+		apt-get install <app name>
+		apt-get install <app name>=<version>
+		apt list
+		apt autoremove
+		apt remove <app name>
+		apt-get remove <app name>
+		apt update <app name>
+	mkdir
+		create dir
+		mkdir <dirname>
+		mkdir a1
+		mkdir a2 a3 a4
+		mkdir a1/b1
+		mkdir -p a3/b3/c3/d3
+	rmdir
+		rmdir <dirname>
+		rmdir <absolute path>
+		rmdir <relativepath>
+		rmdir -p <dir>
+	touch
+		touch filename
+		touch filename1, file2
+	rm
+		rm file name
+		rm -f
+		rm -r
+
+task
+	10 flags from each command to do additional operations
+	
